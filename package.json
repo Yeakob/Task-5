@@ -1,9 +1,9 @@
 {
   "name": "fake-bookstore",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "books.js",
   "scripts": {
-    "start": "node api/index.js"
+    "start": "node api/books.js"
   },
   "keywords": [],
   "author": "",

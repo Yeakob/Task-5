@@ -16,14 +16,13 @@ likesSlider.addEventListener("input", () => {
     likesValue.textContent = likesSlider.value;
 });
 
-// Generate a random seed and reset
+// Generate a random seed
 generateSeedButton.addEventListener("click", () => {
     const randomSeed = Math.floor(Math.random() * 100000);
     seedInput.value = randomSeed;
-    
 });
 
-// Handle the Submit button click
+// Handle Submit button click
 submitButton.addEventListener("click", () => {
     resetAndFetchBooks();
 });
@@ -63,7 +62,7 @@ const fetchBooks = async () => {
     }
 };
 
-// Render books to the table with a dropdown for details
+// Render books
 const renderBooks = (books) => {
     books.forEach((book) => {
         const row = document.createElement("tr");
@@ -76,30 +75,21 @@ const renderBooks = (books) => {
             <td><button class="toggle-details">Show</button></td>
         `;
 
-        // Add hidden details row
         const detailsRow = document.createElement("tr");
-        detailsRow.classList.add("details-row");
         detailsRow.style.display = "none";
-        detailsRow.style.padding = "30px";
-        detailsRow.style.paddingLeft = "20rem";
         detailsRow.innerHTML = `
             <td colspan="6">
-                <strong>Title : ${book.title}</strong></br>
-                <strong>Author : ${book.authors}</strong></br>
-                <strong>Publisher : ${book.publisher}</strong></br>
+                <strong>Title:</strong> ${book.title}<br>
+                <strong>Author:</strong> ${book.authors}<br>
+                <strong>Publisher:</strong> ${book.publisher}<br>
                 <strong>Likes:</strong> ${book.likes} | <strong>Reviews:</strong> ${book.reviews}
             </td>
         `;
 
-        // Attach event listener for toggle
         row.querySelector(".toggle-details").addEventListener("click", (e) => {
-            if (detailsRow.style.display === "none") {
-                detailsRow.style.display = "table-row";
-                e.target.textContent = "Hide";
-            } else {
-                detailsRow.style.display = "none";
-                e.target.textContent = "Show";
-            }
+            detailsRow.style.display =
+                detailsRow.style.display === "none" ? "table-row" : "none";
+            e.target.textContent = e.target.textContent === "Show" ? "Hide" : "Show";
         });
 
         booksTableBody.appendChild(row);
