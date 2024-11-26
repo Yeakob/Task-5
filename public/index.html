@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake Bookstore</title>
+    <title>Bookstore</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="w-full h-screen overflow-scroll bg-slate-100">
     <div id="app">
-        <div class="p-5 px-8 flex justify-between flex-row items-center" id="controls">
-            <div class="p-2 h-[4.5rem] px-5 pr-5 rounded-md shadow-sm flex justify-start flex-col items-start bg-white">
+        <div class="p-5 px-8 flex lg:flex-row  justify-between flex-col pt-3 items-center" id="controls">
+            <div class="p-2 my-5 h-[4.5rem] w-[17rem] pt-3 px-5 pr-5 rounded-md shadow-sm flex justify-start flex-col items-start bg-white">
                 <label class="text-sm text-slate-500 font-mono font-semibold" for="language">Language:</label>
                 <select class=" shadow-sm text-md w-full border-none text-slate-800 text-md text-slate-500 font-mono font-mono flex justify-start flex-col items-start bg-slate-50 px-1  pr-20 py-1" id="language">
                     <option value="en">English (US)</option>
@@ -20,7 +20,7 @@
                     <option value="fr">French (FR)</option>
                 </select>
             </div>
-            <div class="p-2 h-[4.5rem] px-5 pr-5 rounded-md shadow-sm flex justify-start flex-row items-center bg-white">
+            <div class="p-2 w-[17rem] my-5 pt-3 h-[4.5rem] px-5 pr-5 rounded-md shadow-sm flex justify-start flex-row items-center bg-white">
                 <div class=" pr-4 rounded-md flex justify-start flex-col items-start bg-white">
                     <label class="text-sm text-slate-500 font-mono font-semibold" for="seed">Seed:</label>
                     <input class="text-md text-slate-500 font-mono" type="text" id="seed" value="42">
@@ -31,7 +31,7 @@
                   </button>
             </div>
 
-           <div class="p-2 h-[4.5rem] w-[15rem] px-5 pr-5 rounded-md shadow-sm flex justify-start flex-row items-center bg-white">
+           <div class="p-2 w-[17rem] my-5 pt-3 h-[4.5rem] w-[15rem] px-5 pr-5 rounded-md shadow-sm flex justify-start flex-row items-center bg-white">
                <div class="py-1 pr-10 rounded-md flex justify-start flex-col items-start bg-white">
                 <label class="text-sm text-slate-500 font-mono font-semibold" for="likes">Likes:</label>
                 <input class="text-md text-slate-500 font-mono"  type="range" id="likes" min="0" max="10" step="0.1" value="5">
@@ -41,7 +41,7 @@
                </div>
            </div>
 
-           <div class="p-2 h-[4.5rem] w-[15rem] px-5 pr-5 rounded-md shadow-sm flex justify-start flex-row items-center bg-white">
+           <div class="p-2 w-[17rem] my-5 pt-3 h-[4.5rem] w-[15rem] px-5 pr-5 rounded-md shadow-sm flex justify-start flex-row items-center bg-white">
             <div class="py-1 pr-5 rounded-md flex justify-start flex-col items-start bg-white">
              <label class="text-sm text-slate-500 font-mono font-semibold" for="likes">Reviews:</label>
              <input class="w-[12rem] border-none shadow-sm bg-slate-50 px-3 text-md text-slate-500 font-mono" type="number" id="reviews" min="0" max="10" step="0.1" value="4.7">
@@ -55,7 +55,7 @@
         </div>
 
 
-        <div class="px-8 rounded-md"> 
+        <div class="px-8 my-5 pt-3 rounded-md"> 
             <table class="rounded-md text-sm text-slate-500" id="books-table">
                 <thead class="px-5">
                     <tr>
