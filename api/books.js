@@ -1,7 +1,7 @@
-import { faker } from '@faker-js/faker';
-import seedrandom from 'seedrandom';
+const faker = require('@faker-js/faker');
+const seedrandom = require('seedrandom');
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
     try {
         const { seed = 42, page = 1, language = 'en', likes = 5, reviews = 4.7 } = req.query;
 
@@ -26,4 +26,5 @@ export default function handler(req, res) {
         console.error('Error generating books:', error.message);
         res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
-}
+};
+
